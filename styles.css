@@ -1,0 +1,286 @@
+/* Estilos generales para ambas pantallas */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar desbordamiento horizontal */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 15px; /* Agregar margen inferior */
+    box-sizing: border-box;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+}
+
+button {
+    padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px; /* Tamaño considerable */
+    margin: 10px;
+    font-size: 16px; /* Aumentar tamaño de la fuente */
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+button.limpiar {
+    background-color: #f08080;
+}
+
+button.limpiar:hover {
+    background-color: #e57373;
+}
+
+.navigation-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px; /* Tamaño considerable */
+    font-size: 16px; /* Aumentar tamaño de la fuente */
+}
+
+.navigation-button:hover {
+    background-color: #4cae4c;
+}
+
+.table-container {
+    overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    margin-top: 20px; /* Agregar margen superior a la tabla */
+    margin-bottom: 100px; /* Agregar margen inferior considerable */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 20px; /* Incrementar el padding */
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+    word-wrap: break-word; /* Permitir que las palabras se dividan para evitar desbordamiento */
+}
+
+td.detalles-adicionales {
+    width: 200px; /* Ajustar según sea necesario */
+    max-width: 200px; /* Ajustar según sea necesario */
+}
+
+.detalles-adicionales.short-text {
+    font-size: 16px; /* Tamaño de fuente normal */
+}
+
+.detalles-adicionales.medium-text {
+    font-size: 14px; /* Tamaño de fuente reducido */
+}
+
+.detalles-adicionales.long-text {
+    font-size: 12px; /* Tamaño de fuente más reducido */
+}
+
+select.table-select {
+    background-color: #5cb85c;
+    color: white;
+    border: 1px solid #4cae4c;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+select.table-select option {
+    background-color: white;
+    color: black;
+}
+
+.buttons-center {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-center button {
+    margin: 10px 20px; /* Espaciado horizontal entre botones */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Aumentar margen inferior en pantallas pequeñas */
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .buttons-center {
+        flex-direction: column;
+    }
+
+    .buttons-center button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table, th, td {
+        white-space: normal; /* Permitir que el texto se envuelva */
+    }
+}
+
+/* Estilos para los campos con errores */
+.error {
+    border-color: red;
+}
+
+.select-error {
+    border-color: red !important;
+    background-color: #fdd; /* Fondo rojo claro para indicar error */
+}
+
+/* Estilos específicos para especialización */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item-span {
+    grid-column: span 2;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+}

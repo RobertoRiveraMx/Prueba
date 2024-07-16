@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Especialista Maquetador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-modal" class="modal">
+        <div class="modal-content">
+            <p>Bienvenido, cada puesto tiene el límite de 3 necesidades, te sugerimos registrar las prioridades en cada puesto.</p>
+            <button id="welcome-modal-close">De acuerdo</button>
+        </div>
+    </div>
+
+    <div id="limit-reached-modal" class="modal">
+        <div class="modal-content">
+            <p>El puesto ya registró 3 necesidades, si desea cambiar o eliminar contacte a soporte, gracias.</p>
+            <button id="limit-reached-modal-close">De acuerdo</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Módulo: Feedback</h1>
+        <form id="evaluation-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="responsable">Responsable:</label>
+                    <input type="text" id="responsable" name="responsable" disabled value="Dato extraído de vista [AD]">
+                </div>
+                <div class="form-group">
+                    <label for="area">Área:</label>
+                    <input type="text" id="area" name="area" disabled value="Dato extraído de vista [AG]">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sede">Sede:</label>
+                    <input type="text" id="sede" name="sede" disabled value="Dato extraído de vista [AG]">
+                </div>
+                <div class="form-group">
+                    <label for="compania">Compañía:</label>
+                    <input type="text" id="compania" name="compania" disabled value="Dato extraído de vista [E]">
+                </div>
+            </div>
+            <h2>A. Área de evaluación: Conocimientos técnicos</h2>
+            <p>Por favor selecciona un puesto de la lista desplegable y los conocimientos técnicos que necesita para mejorar su desempeño actual.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="puesto">Puesto: <span>*</span></label>
+                    <select id="puesto" name="puesto" required>
+                        <option value="">Elegir</option>
+                        <option value="analista_compras">Analista Compras</option>
+                        <option value="ingeniero_software">Ingeniero de Software</option>
+                        <option value="gerente_proyecto">Gerente de Proyecto</option>
+                        <option value="administrador_sistemas">Administrador de Sistemas</option>
+                        <option value="desarrollador_web">Desarrollador Web</option>
+                        <option value="especialista_marketing">Especialista en Marketing</option>
+                        <option value="analista_datos">Analista de Datos</option>
+                        <option value="arquitecto_sistemas">Arquitecto de Sistemas</option>
+                        <option value="consultor_it">Consultor IT</option>
+                        <option value="diseñador_grafico">Diseñador Gráfico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="competencia">Competencia técnica: <span>*</span></label>
+                    <select id="competencia" name="competencia" required>
+                        <option value="">Elegir</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="csharp">C#</option>
+                        <option value="html_css">HTML/CSS</option>
+                        <option value="sql">SQL</option>
+                        <option value="nodejs">Node.js</option>
+                        <option value="angular">Angular</option>
+                        <option value="react">React</option>
+                        <option value="docker">Docker</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="habilidad">Habilidad: <span>*</span></label>
+                    <select id="habilidad" name="habilidad" required>
+                        <option value="">Elegir</option>
+                        <option value="programacion">Programación</option>
+                        <option value="gestion_proyectos">Gestión de Proyectos</option>
+                        <option value="analisis_datos">Análisis de Datos</option>
+                        <option value="diseño_grafico">Diseño Gráfico</option>
+                        <option value="marketing_digital">Marketing Digital</option>
+                        <option value="redes">Redes</option>
+                        <option value="seguridad_informatica">Seguridad Informática</option>
+                        <option value="ux_ui">UX/UI</option>
+                        <option value="testing">Testing</option>
+                        <option value="escritura_tecnica">Escritura Técnica</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="desarrollos">Desarrollos internos: <span>*</span></label>
+                    <select id="desarrollos" name="desarrollos" required>
+                        <option value="">Elegir</option>
+                        <option value="intranet">Intranet</option>
+                        <option value="crm">CRM</option>
+                        <option value="erp">ERP</option>
+                        <option value="app_movil">Aplicación Móvil</option>
+                        <option value="sitio_web">Sitio Web</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="sistemas_gestion">Sistemas de Gestión</option>
+                        <option value="bi">Business Intelligence</option>
+                        <option value="ml">Machine Learning</option>
+                        <option value="iot">Internet of Things</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="adicional">Si en la lista no encontraste el conocimiento técnico o nombre del software, especifícalo aquí:</label>
+                    <input type="text" id="adicional" name="adicional" maxlength="100">
+                    <p><small>* Acotar a no más de 100 caracteres</small></p>
+                </div>
+            </div>
+            <div class="form-row buttons-center">
+                <button type="button" id="agregar">Agregar</button>
+            </div>
+            <p><small>* Nota: Cada puesto tiene el límite de 3 necesidades, te sugerimos registrar las prioridades en cada puesto.</small></p>
+        </form>
+        <div id="message"></div>
+        <div class="table-container">
+            <table id="registro-tabla">
+                <thead>
+                    <tr>
+                        <th>Puesto</th>
+                        <th>¿El puesto requiere capacitación?</th>
+                        <th>Competencia</th>
+                        <th>Habilidad</th>
+                        <th>Desarrollo interno</th>
+                        <th>Nivel de dominio actual</th>
+                        <th>Nivel de dominio esperado</th>
+                        <th>Detalles adicionales</th>
+                        <th>Nivel de importancia</th>
+                        <th>Nivel de urgencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los registros se agregarán aquí -->
+                </tbody>
+            </table>
+        </div>
+        <div class="form-row buttons-center">
+            <button type="button" id="guardar-continuar">Guardar y Continuar</button>
+            <button type="button" id="borrar-datos" class="limpiar">Borrar datos</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>Cada puesto tiene el límite de 3 necesidades.</p>
+            <button id="modal-close">Lo entiendo</button>
+        </div>
+    </div>
+
+    <!-- Modal de error -->
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <p>Por favor, complete todos los campos obligatorios.</p>
+            <button id="error-modal-close">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <p>Los datos se guardaron exitosamente. ¿Deseas continuar o deseas seguir agregando más datos?</p>
+            <div class="buttons-center">
+                <button id="continue-button">Continuar</button>
+                <button id="add-more-button">Agregar más</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de felicitaciones -->
+    <div id="felicitaciones-modal" class="modal">
+        <div class="modal-content">
+            <p>Felicitaciones, has concluido con los registros. ¿Te gustaría agregar más datos?</p>
+            <div class="buttons-center">
+                <button id="pantalla1-button">Ir a pantalla 1</button>
+                <button id="pantalla2-button">Ir a pantalla 2</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
